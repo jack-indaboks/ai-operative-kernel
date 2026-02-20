@@ -17,7 +17,7 @@ ALT is an integrity layer, not a lock.
 
 - It does not attempt to prevent all out-of-band edits by humans or other tools.
 - It defines the authorized maintenance workflow that keeps identity artifacts in sync.
-- It ensures identity updates include required side effects (for example INDEX updates, DECISIONS entries, and related cross-file alignment).
+- It ensures identity updates include required side effects (for example INDEX updates, CHANGELOG entries, and related cross-file alignment).
 
 ## What This Layer Is Not
 
@@ -35,13 +35,13 @@ ALT is an integrity layer, not a lock.
 | `02_TASKS_autonomy.md` | Executable autonomy workflows. | Primary extension point for new automation workflows. |
 | `03_GOVERNANCE_autonomy.md` | Ownership and permission model. | Maintainer-editable policy surface. |
 | `04_STYLE_autonomy.md` | Style conventions for identity maintenance edits. | Maintainer-editable consistency surface. |
-| `09_DECISIONS_autonomy.md` | Append-only autonomy policy decisions log. | Add new entries; avoid destructive edits. |
+| `09_CHANGELOG_autonomy.md` | Append-only autonomy policy CHANGELOG. | Add new entries; avoid destructive edits. |
 
 TODO tracking stays workspace-level (for example `TODO.md`) rather than in ALT.
 
 ## How It Fits Into Prompt Layering
 
-- The prompt-layering TASK merges Autonomy CORE with one or more identity cores when self-editing is intended.
+- The prompt-layering TASK merges Autonomy CORE with one or more identity CORE files when self-editing is intended.
 - If the Autonomy Layer is absent, identity files are generally treated as immutable.
 - ALT can be used standalone or layered; governance behavior is the same in both cases.
 
@@ -55,7 +55,7 @@ TODO tracking stays workspace-level (for example `TODO.md`) rather than in ALT.
 
 - Out-of-band edits are possible, but they are considered ad hoc.
 - Ad hoc identity edits are expected to be reconciled through ALT workflows so parity is restored.
-- Reconciliation captures missing side effects (for example DECISIONS and INDEX alignment).
+- Reconciliation captures missing side effects (for example CHANGELOG and INDEX alignment).
 
 ## Getting Started
 

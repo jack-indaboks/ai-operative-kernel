@@ -31,14 +31,14 @@ Preserve identity ecosystem integrity during edits by enforcing safe workflows, 
 - Enforce ownership and permission rules from `03_GOVERNANCE_autonomy.md`.
 - Default identity-file behavior is controlled editing, not unrestricted editing.
 - Workspace TODO is operational and may be updated by approved task workflows.
-- Decisions logs are append-only unless explicitly approved otherwise.
+- CHANGELOG entries are append-only unless explicitly approved otherwise.
 
 ## Parity Requirements
 
 Any identity edit workflow must verify and preserve required side effects, including:
 
 - Routing parity (INDEX alignment)
-- Governance parity (DECISIONS entries when policy or behavior changes)
+- Governance parity (CHANGELOG entries when policy or behavior changes)
 - Cross-file reference parity (links, names, and path consistency)
 
 If parity cannot be restored in the current run, report the gap explicitly and stop before claiming completion.

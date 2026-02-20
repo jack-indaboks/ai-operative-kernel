@@ -9,7 +9,7 @@ Task macros keyed to short triggers. When a trigger is invoked, run the associat
 - **When to Run:** After identity files changed outside standard autonomy workflows.
 - **Workflow:**
   1. Identify modified identity files and summarize what changed.
-  2. Confirm required side effects (INDEX routing, cross-file references, and identity DECISIONS entries where applicable).
+  2. Confirm required side effects (INDEX routing, cross-file references, and identity CHANGELOG entries where applicable).
   3. Apply missing parity updates with minimal diffs.
   4. Report the reconciliation summary and remaining risks.
 
