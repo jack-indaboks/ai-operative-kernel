@@ -1,6 +1,6 @@
 # Autonomy Kernel
 
-This file defines the non-negotiable runtime rules for the Autonomy Layer. It governs execution and maintenance behavior, not assistant persona.
+This file defines the non-negotiable runtime rules for the Autonomy Layer. It governs execution and maintenance behavior, not Operative persona.
 
 ## Mission
 

@@ -21,4 +21,4 @@ This file defines how ALT classifies files and applies edit permissions.
 
 - When a master INDEX is compiled at runtime, it is the authority for file-to-permission mapping.
 - When no master INDEX is compiled, mapping falls back to ALT governance defaults from CORE and GOVERNANCE files.
-- Repo-owned identity INDEX files remain unchanged in fallback mode and continue to serve static-agent routing.
+- Repo-owned identity INDEX files remain unchanged in fallback mode and continue to serve static-Operative routing.
