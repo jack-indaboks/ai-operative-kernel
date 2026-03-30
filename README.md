@@ -1,70 +1,68 @@
-# Autonomy Layer Template (ALT)
+# Operative Kernel
 
-Use this repository as the starter Autonomy Layer. The Autonomy Layer is not an identity layer. It supplies governance for self-editing and long-running execution, and it is only included in a workspace when an Operative is intended to modify operative files.
+This repository is the shared kernel deliverable for the AI Operative system.
 
-Identity layers assume their own files are immutable unless an Autonomy Layer is present in the workspace.
+The kernel is the universal starting state for every Operative. It owns the operative-level baseline: protected protocol, bootstrap routing, default edit policy, and the shared maintenance rules that apply before any identity, operations, or environment layer is added.
+
+The kernel is not an identity layer, an operations layer, or an environment layer. It is the foundation those layers are assembled onto.
 
 ## Purpose
 
-- Maintain ecosystem parity when operative files change.
-- Define governed edit workflows (planning, edits, decision logging, and parity checks).
-- Provide guardrails for TODO logging, decision capture, and workflow automation.
-- Stay separate from identity layers so stable personas remain stable by default.
+- Provide the universal operative baseline from which every Operative repo begins.
+- Define the protected operative-level contract for `CORE`, `INDEX`, and shared routing behavior.
+- Provide default edit-policy and maintenance behavior for Operative-local files and governed edits to included source repos.
+- Support assembly of one kernel plus selected upstream layer repos into a durable Operative repo.
+
+## Current Status
+
+This repository is in transition from the earlier `ALT` scaffold to the shared-kernel model.
+
+- The repo itself is now the kernel deliverable.
+- Legacy autonomy-era material is preserved temporarily under `ALT/` as donor scaffolding.
+- The new kernel file family is being rebuilt at the repo root in bounded steps rather than by reskinning the old autonomy files in place.
 
 ## Core Role
 
-ALT is an integrity layer, not a lock.
+The kernel establishes the minimum shared behavior of an Operative.
 
-- It does not attempt to prevent all out-of-band edits by humans or other tools.
-- It defines the authorized maintenance workflow that keeps identity artifacts in sync.
-- It ensures identity updates include required side effects (for example INDEX updates, CHANGELOG entries, and related cross-file alignment).
+- It is mandatory, not optional.
+- It does not define persona, mission, or domain knowledge.
+- It does not replace identity, operations, or environment layers.
+- It provides the baseline that those layers extend.
 
-## What This Layer Is Not
+## What The Kernel Owns
 
-- Not a replacement for PILT or TILT.
-- Not a knowledge base for project content.
-- Not a default dependency for identity layers.
-- Not a personality or tone layer.
+- The operative-level protected protocol and file-family contract.
+- Default edit-policy behavior when a more specific target-repo governance artifact is absent or silent.
+- Operative-local manifests, regeneration rules, and shared maintenance defaults.
+- The assembly baseline used to compile runtime-facing artifacts from kernel plus selected upstream layers.
 
-## Structure
+## What The Kernel Does Not Own
 
-| File | Role | Maintainer Notes |
-|------|------|------------------|
-| `00_CORE_autonomy.md` | Non-negotiable autonomy runtime kernel. | Template-maintained; avoid direct edits unless intentionally evolving ALT itself. |
-| `01_INDEX_autonomy.md` | Operative routing map for autonomy files. | Keep in sync when file inventory changes. |
-| `02_TASKS_autonomy.md` | Executable autonomy workflows. | Primary extension point for new automation workflows. |
-| `03_GOVERNANCE_autonomy.md` | Ownership and permission model. | Maintainer-editable policy surface. |
-| `04_STYLE_autonomy.md` | Style conventions for identity maintenance edits. | Maintainer-editable consistency surface. |
-| `09_CHANGELOG_autonomy.md` | Append-only autonomy policy CHANGELOG. | Add new entries; avoid destructive edits. |
+- Personal or team identity canon.
+- Reusable task canon that belongs in the operations layer.
+- Platform-specific embodiment logic that belongs in environment layers such as `CELT`.
+- Target-repo-specific governance that belongs in `EDITING_<Repo>.md` artifacts.
 
-TODO tracking stays workspace-level (for example `TODO.md`) rather than in ALT.
+## Repository Shape
 
-## How It Fits Into Prompt Layering
+During the transition, this repo contains two surfaces:
 
-- The prompt-layering TASK merges Autonomy CORE with one or more identity CORE files when self-editing is intended.
-- If the Autonomy Layer is absent, operative files are generally treated as immutable.
-- ALT can be used standalone or layered; governance behavior is the same in both cases.
+- The root surface, which is reserved for the emerging kernel deliverable.
+- The `ALT/` donor surface, which preserves the earlier autonomy-layer scaffold so its reusable material can be classified and extracted intentionally.
 
-## Guardrail Inheritance Rule
+Interactive process tracking remains workspace-level in ephemeral work files rather than in the kernel repo itself.
 
-- In ALT workflows, operative file edits inherit the target layer's guardrails from that layer's own files (at minimum CORE and INDEX).
-- This inheritance model applies whether ALT runs standalone or blended with another identity layer.
-- When target-layer guardrails and autonomy workflow steps conflict, operator direction is required before continuing.
+## Relationship To The Ecosystem
 
-## Out-of-Band Edit Policy
+- Every Operative repo begins as an instance of this kernel.
+- Included source-bearing layer repos are mounted into an Operative repo as pinned submodules.
+- The Operative manifest records included repos, pinned states, edit enablement, and generated outputs.
+- Environment-layer deployment remains a separate embodiment step rather than part of the platform-agnostic kernel surface.
 
-- Out-of-band edits are possible, but they are considered ad hoc.
-- Ad hoc operative file edits are expected to be reconciled through ALT workflows so parity is restored.
-- Reconciliation captures missing side effects (for example CHANGELOG and INDEX alignment).
+## Maintainer Guidance
 
-## Getting Started
-
-1. Click **Use this template** on GitHub to create a new Autonomy Layer repository (for example `ALT_Nova`).
-2. Define the autonomy CORE and INDEX files based on your environment and governance needs.
-3. Include this repo alongside identity layers only when you want self-editing behavior.
-
-## For Operators
-
-- When you want a static Operative, exclude this repo from the workspace.
-- When you want a self-editing Operative, include this repo and run the prompt-layering TASK.
-- If edits occur outside ALT workflows, reconciliation restores the layer to a clean, parity-aligned state.
+- Treat the root of this repo as the canonical home of the shared kernel deliverable.
+- Treat `ALT/` as temporary donor material, not as live kernel canon.
+- When extracting useful material from `ALT/`, rewrite it into kernel terms rather than carrying autonomy-layer framing forward unchanged.
+- Remove donor material only after the replacement kernel material has landed cleanly.
