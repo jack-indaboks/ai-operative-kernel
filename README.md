@@ -1,6 +1,6 @@
 # Operative Kernel
 
-This repository is the shared kernel deliverable for the AI Operative system.
+This repository is the shared source repo for the Operative Kernel.
 
 The kernel is the universal starting state for every Operative. It owns the operative-level baseline: protected protocol, bootstrap routing, default edit policy, and the shared maintenance rules that apply before any identity, operations, or environment layer is added.
 
@@ -8,10 +8,10 @@ The kernel is not an identity layer, an operations layer, or an environment laye
 
 ## Purpose
 
-- Provide the universal operative baseline from which every Operative repo begins.
-- Define the protected operative-level contract for `CORE`, `INDEX`, and shared routing behavior.
+- Provide the universal operative baseline from which every Operative begins.
+- Define the protected operative-level contract for `PROTOCOL`, `INDEX`, and shared routing behavior.
 - Provide default edit-policy and maintenance behavior for Operative-local files and governed edits to included source repos.
-- Support assembly of one kernel plus selected upstream layer repos into a durable Operative repo.
+- Support assembly of durable Operatives that begin from the kernel and incorporate selected upstream layer repos.
 
 ## Current Status
 
@@ -34,8 +34,8 @@ The kernel establishes the minimum shared behavior of an Operative.
 
 - The operative-level protected protocol and file-family contract.
 - Default edit-policy behavior when a more specific target-repo governance artifact is absent or silent.
-- Operative-local manifests, regeneration rules, and shared maintenance defaults.
-- The assembly baseline used to compile runtime-facing artifacts from kernel plus selected upstream layers.
+- Operative-local `ASSEMBLY` canon, regeneration rules, and shared maintenance defaults.
+- The assembly baseline used to compile runtime-facing artifacts for an Operative incorporating its selected upstream layers.
 
 ## What The Kernel Does Not Own
 
@@ -51,13 +51,13 @@ During the transition, this repo contains two surfaces:
 - The root surface, which is reserved for the emerging kernel deliverable.
 - The `ALT/` donor surface, which preserves the earlier autonomy-layer scaffold so its reusable material can be classified and extracted intentionally.
 
-Interactive process tracking remains workspace-level in ephemeral work files rather than in the kernel repo itself.
+Interactive process tracking remains workspace-level in ephemeral work files rather than in this repo.
 
 ## Relationship To The Ecosystem
 
-- Every Operative repo begins as an instance of this kernel.
+- Every Operative begins as an instance of this kernel and adds selected upstream layers.
 - Included source-bearing layer repos are mounted into an Operative repo as pinned submodules.
-- The Operative manifest records included repos, pinned states, edit enablement, and generated outputs.
+- `ASSEMBLY` records included repos, pinned states, edit enablement, and generated outputs.
 - Environment-layer deployment remains a separate embodiment step rather than part of the platform-agnostic kernel surface.
 
 ## Maintainer Guidance
