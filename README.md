@@ -36,6 +36,7 @@ The kernel establishes the minimum shared behavior of an Operative.
 - Default edit-policy behavior when a more specific target-repo governance artifact is absent or silent.
 - Operative-local `ASSEMBLY` canon, regeneration rules, and shared maintenance defaults.
 - The assembly baseline used to compile runtime-facing artifacts for an Operative incorporating its selected upstream layers.
+- Defaults that higher-level tasks rely on for governed editing, update handling, and regeneration.
 
 ## What The Kernel Does Not Own
 
@@ -43,6 +44,8 @@ The kernel establishes the minimum shared behavior of an Operative.
 - Reusable task canon that belongs in the operations layer.
 - Platform-specific embodiment logic that belongs in environment layers such as `CELT`.
 - Target-repo-specific governance that belongs in `EDITING_<Repo>.md` artifacts.
+- Workspace-local process tracking such as `operative-work.md`.
+- Layer-local domain workflows that belong in per-layer `TASKS` files rather than in kernel defaults.
 
 ## Repository Shape
 
