@@ -2,7 +2,7 @@
 
 This repository is the shared source repo for the Operative Kernel.
 
-The kernel is the universal starting state for every Operative. It owns the operative-level baseline: protected protocol, bootstrap routing, default edit policy, and the shared maintenance rules that apply before any identity, operations, or environment layer is added.
+The kernel is the universal starting state for every Operative. It owns the operative-level baseline: protected protocol, bootstrap routing, assembly baseline, and the shared defaults that apply before any identity, operations, or environment layer is added.
 
 The kernel is not an identity layer, an operations layer, or an environment layer. It is the foundation those layers are assembled onto.
 
@@ -10,7 +10,6 @@ The kernel is not an identity layer, an operations layer, or an environment laye
 
 - Provide the universal operative baseline from which every Operative begins.
 - Define the protected operative-level contract for `PROTOCOL`, `INDEX`, and shared routing behavior.
-- Provide default edit-policy and maintenance behavior for Operative-local files and governed edits to included source repos.
 - Support assembly of durable Operatives that begin from the kernel and incorporate selected upstream layer repos.
 
 ## Current Status
@@ -33,17 +32,16 @@ The kernel establishes the minimum shared behavior of an Operative.
 ## What The Kernel Owns
 
 - The operative-level protected protocol and file-family contract.
-- Default edit-policy behavior when a more specific target-repo governance artifact is absent or silent.
-- Operative-local `ASSEMBLY` canon, regeneration rules, and shared maintenance defaults.
+- Operative-local `ASSEMBLY` canon, regeneration rules, and shared baseline governance.
 - The assembly baseline used to compile runtime-facing artifacts for an Operative incorporating its selected upstream layers.
-- Defaults that higher-level tasks rely on for governed editing, update handling, and regeneration.
+- Defaults that higher-level tasks rely on for update handling and regeneration.
 
 ## What The Kernel Does Not Own
 
 - Personal or team identity canon.
 - Reusable task canon that belongs in the operations layer.
 - Platform-specific embodiment logic that belongs in environment layers such as `CELT`.
-- Target-repo-specific governance that belongs in `EDITING_<Repo>.md` artifacts.
+- Maintainer-focused editing and normalization workflows that belong in a loaded operations layer.
 - Workspace-local process tracking such as `operative-work.md`.
 - Layer-local domain workflows that belong in per-layer `TASKS` files rather than in kernel defaults.
 
@@ -59,8 +57,8 @@ Interactive process tracking remains workspace-level in ephemeral work files rat
 ## Relationship To The Ecosystem
 
 - Every Operative begins as an instance of this kernel and adds selected upstream layers.
-- Included source-bearing layer repos are mounted into an Operative repo as pinned submodules.
-- `ASSEMBLY` records included repos, pinned states, edit enablement, and generated outputs.
+- Included layer repos are mounted into an Operative repo as pinned submodules.
+- `ASSEMBLY` is the operative-local assembly record. In the kernel template it is empty; downstream Operatives populate it with included layers, per-layer editing, and generated outputs as needed.
 - Environment-layer deployment remains a separate embodiment step rather than part of the platform-agnostic kernel surface.
 
 ## Maintainer Guidance
